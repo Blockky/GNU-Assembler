@@ -17,5 +17,8 @@ La instrucción (test) realiza una operación AND bit a bit entre dos operandos 
 
 Las banderas se actualizan de la siguiente manera:
 <p align="center">
+<img src="https://github.com/Blockky/GNU-Assembler/blob/main/Sesion3/comparaciones.png" alt="x86" width=700 />
+</p>
+<p align="center">
 <img src="https://github.com/Blockky/GNU-Assembler/blob/main/Sesion3/flags.png" alt="x86" width=700 />
 </p>
