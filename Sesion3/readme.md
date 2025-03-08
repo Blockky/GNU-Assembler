@@ -1,6 +1,6 @@
 ## Desplazamientos, comparaciones y saltos
 
-En GAS se pueden realizar saltos a secciones expecíficas de código. Estos saltos pueden ser condicionales o incondicionles.
+En GAS se pueden realizar saltos a secciones expecíficas de código. Estos saltos pueden ser condicionales o incondicionales.
 
 El salto incondicional (jmp section) salta directamente a la sección especificada una vez se llega a la línea de código que contenga la instrucción.
 
