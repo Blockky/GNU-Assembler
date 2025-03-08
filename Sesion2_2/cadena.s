@@ -8,7 +8,8 @@
     len = . - msg
 
 .text
-.global _start
+    .global _start
+
 _start:
     /* Solicitar al usuario que escriba una cadena */
     movl  $4,     %eax
@@ -24,8 +25,8 @@ _start:
     movl $tam,    %edx
     int  $0x80
 
-contar:
     /* Contar el numero de caracteres leidos */
+contar:
     movb buffer(%esi), %al
     cmpb $0, %al
     je siguiente
@@ -37,13 +38,16 @@ siguiente:
     /* Restamos 1 a %edi para no tomar en cuenta el final de la cadena */
     subl $1,   %edi
 
-    /* Poner en minuscula todo*/
+    /* Creamos un loop que itera según el número de caracteres de la 
+    cadena. En cada iteración procesamos cada caracter (cada byte) según
+    lo que se nos pida */
     movl %edi,  %ecx
     movl $0,    %esi
 
+    /* Poner en minuscula todo*/
 lower:
     movb  buffer(%esi), %al
-    orb   $0b00100000,  %al
+    orb   $0b00100000,  %al     /* El bit con peso 2**5 se pone en 1 */
     movb  %al, buflower(%esi)
     incl  %esi
     loop lower
