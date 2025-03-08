@@ -6,7 +6,7 @@
 
 <p>En la siguiente página se encuentra una lista de los posibles servicios que puede ejecutar los sitemas Linux con arquitecturas x86:</p>
 <p> Lista de servicios
-<a href="https://syscalls.w3challs.com/?arch=x86" target="_blank" rel="noreferrer">
+<a href="https://syscalls.w3challs.com/?arch=x86" target="Lista de servicios" rel="Lista de servicios">
 </p>
 <p>En la primera parte de esta práctica se usan los servicios:</p>
 
