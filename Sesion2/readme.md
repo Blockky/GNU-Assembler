@@ -5,7 +5,7 @@
 - En EBX, ECX, EDX, EDI, ESI y EBP deben de ir los parametros necesarios para realizar el servicio
 
 <p>En la siguiente página se encuentra una lista de los posibles servicios que puede ejecutar los sitemas Linux con arquitecturas x86:</p>
-<p> Lista de servicios <a href="https://syscalls.w3challs.com/?arch=x86"> W</p>
+<p><a href="https://syscalls.w3challs.com/?arch=x86">Lista de servicios </p>
 <p>En la primera parte de esta práctica se usan los servicios:</p>
 
 <p>SYS_WRITE (4)</p>
