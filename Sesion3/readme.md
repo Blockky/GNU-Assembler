@@ -2,7 +2,7 @@
 
 En GAS se pueden realizar saltos a secciones expecíficas de código. Estos saltos pueden ser condicionales o incondicionales.
 
-El salto incondicional (jmp section) salta directamente a la sección especificada una vez se llega a la línea de código que contenga la instrucción.
+El salto incondicional (jmp section) salta directamente a la sección especificada.
 
 Los saltos condicionales solo saltan a la sección especificada si se cumple una condición:
 <p align="center">
