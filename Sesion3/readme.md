@@ -6,5 +6,5 @@ El salto incondicional (jmp section) salta directamente a la sección especifica
 
 Los saltos condicionales solo saltan a la sección especificada si se cumple una condición:
 <p align="center">
-<img src="https://github.com/Blockky/GNU-Assembler/blob/main/Sesion3/saltos.png" alt="x86" width=400 />
+<img src="https://github.com/Blockky/GNU-Assembler/blob/main/Sesion3/saltos.png" alt="x86" width=700 />
 </p>
