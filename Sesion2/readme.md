@@ -1,4 +1,4 @@
-## Servicios int $0x80 utilizados
+## Llamadas al sistema con int $0x80
 <p>Para realizar un determinado servicio haciendo llamadas al sistema con la interrupción int $0x80 se toma en cuenta que:</p>
 
 - En EAX debe de ir el número del servicio a realizar
