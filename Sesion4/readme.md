@@ -11,8 +11,8 @@ Este servicio sirve para abrir o crear un fichero en nuestro ordenador
 
 Banderas (modos de acceso)
 
-{00000} O_RDONLY: sólo lectura
-{00001} O_WRONLY: sólo escritura
-{00002} O_RDWR: lectura y escritura
-{02000} O_APPEND: el ﬁchero se abre en modo append de forma que las sucesivas escrituras se añaden
-{00100} O_CREAT: si la ruta pasada como argumento no existe, se crea el ﬁchero
+- {00000} O_RDONLY: sólo lectura
+- {00001} O_WRONLY: sólo escritura
+- {00002} O_RDWR:   lectura y escritura
+- {02000} O_APPEND: el ﬁchero se abre en modo append de forma que las sucesivas escrituras se añaden
+- {00100} O_CREAT:  si la ruta pasada como argumento no existe, se crea el ﬁchero
