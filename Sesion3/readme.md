@@ -17,11 +17,3 @@ Estas condiciones las declara el valor de las banderas EFLAGS, las cuales se ven
 La instrucción (cmp) realiza una resta entre dos operandos y actualiza los flags, pero no almacena el resultado.
 
 La instrucción (test) realiza una operación AND bit a bit entre dos operandos y actualiza los flags, pero no almacena el resultado.
-
-Las banderas se actualizan de la siguiente manera:
-<p align="center">
-<img src="https://github.com/Blockky/GNU-Assembler/blob/main/Sesion3/comp.png" alt="x86" width=700 />
-</p>
-<p align="center">
-<img src="https://github.com/Blockky/GNU-Assembler/blob/main/Sesion3/flags.png" alt="x86" width=700 />
-</p>
