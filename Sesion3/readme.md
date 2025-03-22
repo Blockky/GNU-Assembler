@@ -10,7 +10,9 @@ Los saltos condicionales solo saltan a la sección especificada si se cumple una
 
 Estas condiciones las declara el valor de las banderas EFLAGS, las cuales se ven modificadas tras realizar desplazamientos, rotaciones u otras instrucciones como comparaciones. Las comparaciones que estudiamos son las que realizan las instrucciones (cmp) y (test). 
 
-<a href="http://www.c-jump.com/CIS77/ASM/Instructions/I77_0070_eflags_bits.htm">Saltos condicionales</a>
+<a href="http://www.c-jump.com/CIS77/ASM/Instructions/I77_0070_eflags_bits.htm">EFLAGS register</a>
+
+<a href="http://www.c-jump.com/CIS77/ASM/Instructions/I77_0050_eflags.htm">FLAGS</a>
 
 La instrucción (cmp) realiza una resta entre dos operandos y actualiza los flags, pero no almacena el resultado.
 
