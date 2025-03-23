@@ -3,7 +3,6 @@
 
 .text
     .global _start
-
 _start:
     /* Sacar el número de argumentos (argc) de la pila */
     popl    %ecx
@@ -14,18 +13,13 @@ argumentos:
     cmpl    $10,  %esi
     je salir
     
-    /* Sacar el siguiente argumento (argv[i]) de la pila,
-    guardar en %ecx un puntero que va al argumento actual
-    y comprobar que no sea NULL */
+    /* Sacar el siguiente argumento (argv[i]) de la pila */
     popl    %ebx
     movl    %ebx, %ecx
-
     testl   %ecx, %ecx
     jz salir
-
-    movl    %ebx, %edi
-    xorl    %eax, %eax
-
+    
+    movl   %ebx,  %edi
     /* Contar el número de bytes del argumento */
 contar:
     cmpb   $0, (%edi)
