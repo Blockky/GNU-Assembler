@@ -1,24 +1,31 @@
-GDB es el GNU Debugger, una herramienta de depuración utilizada en sistemas Unix/Linux para programas escritos en lenguajes como C, C++, ensamblador y otros compatibles. 
-Su propósito principal es ayudarte a encontrar y corregir errores en tu código mientras el programa se está ejecutando o después de que haya fallado.
+GDB es el GNU Debugger, una herramienta de depuración utilizada en sistemas Unix/Linux para programas escritos en lenguaje ensamblador y otros compatibles.
 
-✅ Ejecutar tu programa paso a paso (step-by-step)
-✅ Poner breakpoints (puntos de interrupción) en el código
-✅ Inspeccionar el valor de variables y estructuras de datos
-✅ Modificar el valor de variables durante la ejecución
-✅ Ver el contenido de la memoria y registros
-✅ Analizar el stack trace cuando el programa se cae (segmentation fault, por ejemplo)
-✅ Investigar por qué el programa se quedó colgado o está comportándose mal
+Este depurador te permite:
 
-En nuestras practicas, para hacer uso de este depurador escribiremos en nuestro terminal lo siguiente:
+- Ejecutar tu programa paso a paso (step-by-step)
+- Poner breakpoints (puntos de interrupción) en el código
+- Inspeccionar el valor de variables y estructuras de datos
+- Modificar el valor de variables durante la ejecución
+- Ver el contenido de la memoria y registros
+- Analizar el stack trace cuando el programa se cae (segmentation fault, por ejemplo)
+- Investigar por qué el programa se quedó colgado o está comportándose mal
+
+La forma en la que usaremos este depurador será la siguiente:
 ```
-gdb ejecutable
+PARA EJECUTAR EL DEPURADOR EN NUESTRO PROGRAMA ESCRIBIMOS EN EL TERMINAL:
+gdb 'ejecutable'
 
-break etiqueta
+CON BREAK DEFINIMOS A PARTIR DE QUE SECCIÓN DEL CÓDIGO QUEREMOS INSPECCIONAR
+break 'etiqueta'
 
-r o run
+PARA EJECUTAR EL PROGRAMA HASTA NUESTRO PUNTO DE RUPTURA (BREAK) ESCRIBIMOS:
+run (r)
 
-s o stepi
+PARA EJECUTAR LA SIGUIENTE LÍNEA DE NUESTRO CÓDIGO ESCRIBIMOS:
+stepi (s)
 
-i r o info register
+PARA VER EL CONTENIDO DE LOS REGISTROS ESCRIBIMOS:
+info register (i r)
 
-q o quit
+PARA SALIR DEL DEPURADOR ESCRIBIMOS:
+quit (q)
