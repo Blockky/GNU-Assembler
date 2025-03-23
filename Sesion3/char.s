@@ -3,6 +3,7 @@
     buffer: .space tam
     msg: .ascii "\nEscribe un caracter (S para finalizar):\n"
     len = . - msg
+    newline: .ascii "\n"
 
 .text
     .global _start
@@ -12,7 +13,7 @@ _start:
     movl  $4,     %eax
     movl  $1,     %ebx
     movl  $msg,   %ecx
-    movl  $len,   %edx    
+    movl  $len,   %edx
     int   $0x80
 
 inicio:
@@ -32,7 +33,14 @@ inicio:
     movl $4,        %eax
     movl $1,        %ebx
     movl $buffer,   %ecx
-    movl $tam,      %edx
+    movl $1,        %edx
+    int  $0x80
+
+    /* Imprimir un salto de linea */
+    movl $4,        %eax
+    movl $1,        %ebx
+    movl $newline,  %ecx
+    movl $1,        %edx
     int  $0x80
 
     jmp inicio /* Repetir proceso */
