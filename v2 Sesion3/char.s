@@ -24,31 +24,22 @@ inicio:
     movl  $tam,     %edx
     int   $0x80
 
-    movl $0,     %esi
-    movl $0,     %edi
-    xorb  %al,   %al
-
-contar:
-    movb buffer(%esi), %al
-    cmpb $0, %al
-    je siguiente
-    inc %edi    /* La cuenta se guarda en %edi */
-    inc %esi    
-    jmp contar
-
-siguiente:
-    /* Restamos 1 a %edi para no tomar en cuenta el final de la cadena */
-    subl $1,   %edi
+    movl  %eax,  %edi
+    subl  $1,    %edi
 
     /* Comparar el caracter con "S" */
+    cmpl  $1,       %edi
+    jne siguiente
+
     movb  buffer,   %al
     cmpb  $'S',     %al
     je finalizar
 
+siguiente:
+    /* Poner la cadena en minusculas */
     movl $0,     %esi
     movl %edi,   %ecx
-
-    /* Poner la cadena en minusculas */
+    
 lower:
     movb  buffer(%esi), %al
     orb   $0b00100000,  %al
@@ -56,7 +47,6 @@ lower:
     incl  %esi
     loop lower
 
-    addl  $1,    %esi
     movb  $10,   buflower(%esi)
 
     /* Imprimir el caracter por pantalla */
@@ -75,7 +65,7 @@ limpiar:
     incl  %esi
     loop limpiar
 
-    jmp inicio /* Repetir proceso */
+    jmp inicio /* Repetir el proceso */
 
 finalizar:
     movl  $0,     %ebx
