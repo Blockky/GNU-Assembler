@@ -9,7 +9,6 @@
 
 .text
     .global _start
-
 _start:
     /* Solicitar al usuario que escriba una cadena */
     movl  $4,     %eax
@@ -25,26 +24,14 @@ _start:
     movl $tam,    %edx
     int  $0x80
 
-    /* Contar el numero de caracteres leidos */
-contar:
-    movb buffer(%esi), %al
-    cmpb $0, %al
-    je siguiente
-    inc %edi    /* La cuenta se guarda en %edi */
-    inc %esi    
-    jmp contar
+    /* Guardamos el numero de bytes leidos */
+    movl %eax,  %edi
+    subl $1,    %edi
 
-siguiente:
-    /* Restamos 1 a %edi para no tomar en cuenta el final de la cadena */
-    subl $1,   %edi
-
-    /* Creamos un loop que itera según el número de caracteres de la 
-    cadena. En cada iteración procesamos cada caracter (cada byte) según
-    lo que se nos pida */
+    /* Poner en minuscula todo*/
     movl %edi,  %ecx
     movl $0,    %esi
 
-    /* Poner en minuscula todo*/
 lower:
     movb  buffer(%esi), %al
     orb   $0b00100000,  %al     /* El bit con peso 2**5 se pone en 1 */
@@ -52,7 +39,6 @@ lower:
     incl  %esi
     loop lower
 
-    addl  $1,  %esi
     movb  $10, buflower(%esi)
 
     movl $4,        %eax
@@ -63,7 +49,7 @@ lower:
 
     /* Poner en mayuscula todo*/
     movl %edi, %ecx
-    movl $0, %esi
+    movl $0,   %esi
 
 upper:
     movb buffer(%esi), %al
@@ -72,7 +58,6 @@ upper:
     incl %esi
     loop upper
 
-    addl  $1,   %esi 
     movb  $10,  bufupper(%esi)
 
     movl $4,        %eax
@@ -92,7 +77,6 @@ swap:
     incl %esi
     loop swap
 
-    addl  $1,   %esi 
     movb  $10,  bufswap(%esi)
 
     movl $4,        %eax
