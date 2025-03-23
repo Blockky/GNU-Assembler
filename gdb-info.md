@@ -10,12 +10,15 @@ Su propósito principal es ayudarte a encontrar y corregir errores en tu código
 ✅ Investigar por qué el programa se quedó colgado o está comportándose mal
 
 En nuestras practicas, para hacer uso de este depurador escribiremos en nuestro terminal lo siguiente:
-´
+```
 gdb ejecutable
-´
-break etiqueda
-´
-´run´
-´s´
-´i r´
-´q´
+
+break etiqueta
+
+r o run
+
+s o stepi
+
+i r o info register
+
+q o quit
