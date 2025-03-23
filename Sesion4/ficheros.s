@@ -10,8 +10,8 @@
     buf_edad: .space tam
     buf_nombre: .space tam
     buffer: .space 1+1
-    newline: .asciz "\n"
-    tab: .asciz "\t"
+    newline: .ascii "\n"
+    tab: .ascii "\t"
 
 .text
     .global _start
@@ -43,18 +43,8 @@ iniciar:
     int   $0x80
 
     /* Contar numero de caracteres escritos */
-    movl $0,     %esi
-
-contar:
-    movb buf_nombre(%esi), %al
-    cmpb $0, %al
-    je siguiente
-    inc %esi    /* La longitud de la cadena se guarda en %esi */
-    jmp contar
-
-siguiente:
-    /* Restamos 1 para no tomar en cuenta el final de la cadena */
-    subl $1,   %esi
+    movl %eax,   %esi
+    subl $1,     %esi
 
     /* Escribir el nombre */
     movl  $4,           %eax
@@ -63,6 +53,7 @@ siguiente:
     movl  %esi,         %edx
     int   $0x80
 
+    /* Escribir una tabulación */
     movl  $4,           %eax
     movl  %edi,         %ebx
     movl  $tab,         %ecx
@@ -84,23 +75,14 @@ siguiente:
     int   $0x80
 
     /* Contar numero de caracteres escritos */
-    movl  $0,           %esi
-
-contar2:
-    movb buf_edad(%esi), %al
-    cmpb $0, %al
-    je siguiente2
-    inc %esi    
-    jmp contar2
-
-siguiente2:
-    subl $1,   %esi
+    movl %eax,   %esi
+    subl $1,     %esi
     
     /* Escribir la edad */
     movl  $4,           %eax
     movl  %edi,         %ebx
     movl  $buf_edad,    %ecx
-    movl  %esi,           %edx
+    movl  %esi,         %edx
     int   $0x80
 
     /* Escribir un salto de línea */
@@ -144,7 +126,7 @@ limpiar:
     incl  %esi
     loop limpiar
 
-    jmp iniciar /* Repetir proceso */
+    jmp iniciar /* Repetir el proceso */
 
 finalizar:
     /* Finalizar el programa */
