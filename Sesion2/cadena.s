@@ -1,11 +1,11 @@
 .data
     tam = 20+1
     buffer: .space tam
-    msg: .ascii "\nEscribe una cadena de menos de 20 caracteres:\n"
+    msg: .ascii "\nEscribe una cadena de no mas de 20 caracteres:\n"
     len = . - msg
 
 .text
-.global _start
+    .global _start
 _start:
     /* Solicitar al usuario que escriba una cadena */
     movl  $4,     %eax
@@ -22,10 +22,11 @@ _start:
     int  $0x80
 
     /* Imprimir la cadena leida */
+    movl %eax,      %edx
+
     movl $4,        %eax
     movl $1,        %ebx
     movl $buffer,   %ecx
-    movl $tam,      %edx
     int  $0x80
 
     /* Finalizamos el programa */
