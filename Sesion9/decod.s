@@ -5,7 +5,7 @@
     len2 = . - msg_bas
     msg_bas_dec: .asciz "Escriba la base en la que desee decodificar el numero:\n"
     len3 = . - msg_bas_dec
-    p_error: .asciz "ERROR: Número invalido\n"
+    p_error: .asciz "ERROR: El número es incorrecto o se ha producido desbordamiento\n"
     len4 = . - p_error
     msg_fin: .asciz "Decodificación del número:\n"
     len5 = . - msg_fin
