@@ -7,6 +7,7 @@
 
 <p>En la siguiente página se encuentra una lista de los posibles servicios que puede ejecutar los sistemas con arquitecturas x86:</p>
 <p><a href="https://syscalls.w3challs.com/?arch=x86">Lista de servicios </p>
+  <p><a href="https://x86.syscall.sh">Lista de servicios v2</p>
 <p>En la primera parte de esta práctica se usan los servicios:</p>
 
 <p>SYS_WRITE (4)</p>
