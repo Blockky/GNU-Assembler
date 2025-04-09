@@ -267,12 +267,13 @@ dec_no_letra:
 
 dec_letra:
     addb $'A', %cl
+    subb $10,  %cl
     movb %cl,  decod(%esi)
     decl %esi
     test %eax, %eax
     jz fin_decodificar
     jmp decodificar
-    
+ 
 fin_decodificar:
     movl %ebp, %esp
     popl %ebp
